@@ -3,6 +3,7 @@ import { Inter, JetBrains_Mono } from 'next/font/google';
 import './globals.css';
 import Navbar from './_components/Navbar';
 import Footer from './_components/Footer';
+import CustomCursor from './_components/CustomCursor';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -37,6 +38,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${jetbrains.variable}`}>
       <body suppressHydrationWarning style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
+        <CustomCursor />
         <Navbar />
         <main style={{ flex: 1, paddingTop: '64px' }}>
           {children}
