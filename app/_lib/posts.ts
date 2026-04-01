@@ -273,6 +273,94 @@ groups:
 End-to-end visibility across 15+ services. MTTR dropped from 45 minutes to under 10 minutes.
     `,
   },
+  {
+    slug: 'kubernetes-simulation-from-scratch',
+    title: 'Kubernetes Simulation from Scratch: Learn Kubernetes Internals',
+    date: '2026-04-01',
+    category: 'Kubernetes',
+    categoryColor: 'blue',
+    readTime: '4 min read',
+    excerpt: 'Stop just using Kubernetes. Start understanding it. I built a production-style Kubernetes simulation from scratch to explore real-world bare-metal setups.',
+    content: `
+## Stop just using Kubernetes. Start understanding it. 🏗️
+
+Over the past few days, I built a production-style Kubernetes simulation from scratch, and it’s now live on GitHub. 🚀
+
+Most tutorials show how to run a simple \`kubectl apply\`, but they rarely explain the “why” behind Kubernetes architecture. This project focuses on understanding how things actually work under the hood by building a full environment that mirrors a real-world bare-metal Kubernetes setup.
+
+## What’s inside the project?
+
+- **Microservices** – Node.js APIs for User & Product management
+- **Stateful Workloads** – MongoDB deployed using StatefulSets with persistent storage
+- **Full Observability** – ELK Stack (Elasticsearch, Logstash, Kibana) with Filebeat for centralized logging
+- **Advanced Networking** – NGINX Ingress Controller & MetalLB for real-world load balancing
+- **Security** – Zero-Trust model using NetworkPolicies & RBAC
+
+## Cloud → Kubernetes Terminology Mapping
+
+If you're coming from AWS or GCP, this repo also includes a Cloud-to-K8s translation guide:
+
+| Cloud Service | Kubernetes Equivalent |
+|---------------|-----------------------|
+| ECS Task      | Pod                   |
+| Application Load Balancer | Ingress   |
+| Target Group  | Service               |
+| VPC           | Namespace             |
+
+The goal was to bridge the gap between cloud services and Kubernetes internals and create something that engineers can actually learn from.
+
+If you're learning Kubernetes or want a hands-on environment to explore real concepts, feel free to check it out!
+
+🔗 **GitHub Repository:** [https://lnkd.in/grhN72dT](https://lnkd.in/grhN72dT)
+    `,
+  },
+  {
+    slug: 'building-self-healing-agent-ollama',
+    title: 'Building a Self-Healing Docker Agent with Ollama',
+    date: '2026-03-25',
+    category: 'AI Agents',
+    categoryColor: 'purple',
+    readTime: '3 min read',
+    excerpt: 'If you don’t have access to paid coding agents, try running models locally using Ollama. Here is how I built a self-healing container agent with local LLMs.',
+    content: `
+Lately I’ve been experimenting with something pretty interesting, and thought it’s worth sharing with folks here 👇
+
+If you don’t have access to paid coding agents or LLM subscriptions, don’t let that stop you. Try running models locally using **Ollama**, especially something like \`qwen3.5:cloud\` (and a few others available there). It’s honestly a great way to get hands-on without spending anything.
+
+You can:
+- Build small projects
+- Experiment with agents
+- Learn how LLMs actually behave in real scenarios
+- And most importantly, break things and fix them 😄
+
+## How to get started (super basic steps):
+
+1. **Install Ollama** -> [https://ollama.com](https://ollama.com)
+2. **Pull a model** -> \`ollama run qwen3.5:cloud\`
+3. **Start experimenting**:
+   - Ask coding questions
+   - Build scripts
+   - Try creating small agents
+
+*(Optional but fun)*
+- Integrate with Python / APIs
+- Connect with your local apps or services
+
+## Building a Self-Healing Agent
+
+Recently, I started working on a small side project — a self-healing agent for containers. The idea is simple (still a work in progress):
+
+- It monitors running services/containers
+- Sends alerts when something goes wrong
+- Tries to resolve basic issues automatically
+
+For example, if there’s a memory issue or a service crash / unhealthy state, the agent attempts a basic fix and ensures the service is back up. Not production-ready yet, but it’s been a great learning experience around automation + LLM use cases in DevOps.
+
+Honestly, tools like Ollama make it super accessible to experiment with ideas like this without worrying about API costs.
+
+*Have you tried running LLMs locally? Built anything interesting with them? Would love to hear what others are exploring! 🚀*
+    `,
+  },
 ];
 
 export function getPostBySlug(slug: string): Post | undefined {
